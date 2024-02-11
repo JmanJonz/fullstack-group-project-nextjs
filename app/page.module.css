@@ -1,0 +1,15 @@
+.component{
+  min-height: 90vh;
+}
+
+.title{
+text-align: center;
+font-size: 60px;
+}
+
+.image{
+  width: 90vw;
+  display: block;
+  margin: 30px auto;
+}
+

@@ -1,0 +1,79 @@
+/* Importing inbuilt fonts for Next.js */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* Defining custom colors */
+:root {
+  --primary-color: #2dd4bf; /* Adjust the primary color as per your preference */
+  --secondary-color: #f56565; /* Adjust the secondary color as per your preference */
+}
+
+/* Tailwind base, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Main styles */
+.main {
+  width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Adjust alignment as needed */
+  padding: 120px 24px 160px 24px;
+  pointer-events: none;
+}
+
+.main:before {
+  background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #fafafa 100%);
+  position: absolute;
+  content: "";
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.main:after {
+  content: "";
+  background-image: url("/assets/images/grid.svg");
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  opacity: 0.4;
+  filter: invert(1);
+}
+
+.gradient {
+  height: fit-content;
+  z-index: 3;
+  width: 100%;
+  max-width: 640px;
+  background-image: radial-gradient(
+      at 27% 37%,
+      var(--primary-color) 0px,
+      transparent 0%
+    ),
+    radial-gradient(at 97% 21%, var(--secondary-color) 0px, transparent 50%),
+    radial-gradient(at 52% 99%, var(--primary-color) 0px, transparent 50%),
+    radial-gradient(at 10% 29%, var(--secondary-color) 0px, transparent 50%),
+    radial-gradient(at 97% 96%, var(--primary-color) 0px, transparent 50%),
+    radial-gradient(at 33% 50%, var(--secondary-color) 0px, transparent 50%),
+    radial-gradient(at 79% 53%, var(--primary-color) 0px, transparent 50%);
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  filter: blur(100px) saturate(150%);
+  top: 80px;
+  opacity: 0.15;
+}
+
+/* Tailwind styles */
+.app {
+  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
+}
+
+/* Other Tailwind styles... */
